@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    Name form
+
+{% endblock %}
+
+{% block content_title %}
+
+    Index page
+
+{% endblock %}
+
+{% block content %}
+
+{% if name %}
+    <h1>Hello {{ name }}</h1>
+{% else %}
+    <h1>What's your name?</h1>
+    <br/>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        {{ form.name.label(class="form-label") }}
+
+        {{ form.name(class="form-control") }}
+        <br/>
+        {{ form.submit(class="btn btn-secondary") }}
+{% endif %}
+    </form>
+
+{% endblock %}
